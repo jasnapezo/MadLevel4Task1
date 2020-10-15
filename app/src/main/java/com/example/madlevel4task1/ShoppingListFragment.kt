@@ -64,7 +64,12 @@ class ShoppingListFragment : Fragment() {
         rvShoppingList.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         rvShoppingList.adapter = shoppingListAdapter
         rvShoppingList.setHasFixedSize(true)
-        rvShoppingList.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        rvShoppingList.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                DividerItemDecoration.VERTICAL
+            )
+        )
 
         createItemTouchHelper().attachToRecyclerView(rvShoppingList)
     }
@@ -101,8 +106,9 @@ class ShoppingListFragment : Fragment() {
         }
     }
 
-    private fun validateFields(txtProductName: EditText
-                               , txtAmount: EditText
+    private fun validateFields(
+        txtProductName: EditText
+        , txtAmount: EditText
     ): Boolean {
         return if (txtProductName.text.toString().isNotBlank()
             && txtAmount.text.toString().isNotBlank()
